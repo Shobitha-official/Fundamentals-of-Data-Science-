@@ -1,0 +1,52 @@
+Line Plot:
+import pandas as pd
+import matplotlib.pyplot as plt
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+headers = ['Name', 'Age', 'Marks']
+df = pd.read_csv('student.csv', names=headers)
+df.set_index('Name').plot()
+plt.show()
+
+Bar Plots:
+data.csv-> https://github.com/mukulbindal/Files/blob/main/data.csv
+import matplotlib.pyplot as plt
+import pandas as pd
+# Initialize the lists for X and Y
+data = pd.read_csv(data.csv')
+df = pd.DataFrame(data)
+# Plot the data using bar() method
+plt.bar(X, Y, color='g')
+plt.title("Students over 11 Years")
+plt.xlabel("Years")
+plt.ylabel("Number of Students")
+# Show the plot
+plt.show()
+
+Histograms:
+import pandas as pd
+data = pd.read_csv("diabetes.csv")
+data.head()
+data.hist(figsize=(10,10),bins=10)
+
+Density Plots
+import pandas as pd
+import matplotlib.pyplot as plt
+# Load data from a CSV file into a Pandas DataFrame
+dataFrame = pd.read_csv("C:\\Users\\amit_\\Desktop\\Cricketers2.csv")
+# plotting the density plot
+# attribute considered is "Age"
+dataFrame.Age.plot.density(color='green')
+plt.title('Density plot = Age')
+plt.show()
+
+Scatter Plots
+import pandas as pd
+df = pd.read_csv('Street_Tree_List.csv', parse_dates=['PlantDate']) df['PlantYears'] = (pd.to_datetime('today') - df['PlantDate']) / pd.Timedelta(days=365) df['qSpecies'] = df['qSpecies'].apply(lambda x: x.split(" ")[0])
+df = df[['Latitude', 'Longitude', 'PlantYears', 'qSpecies']]
+df.dropna(subset=['PlantYears', 'Latitude'], inplace=True)
+df.head
+
+
+
+
