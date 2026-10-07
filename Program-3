@@ -1,0 +1,98 @@
+a) Handle missing data by detecting and dropping/ filling missing values
+# importing pandas package
+import pandas as pd
+# making data frame from csv file
+data = pd.read_csv("employees.csv")
+# creating bool series True for NaN values
+bool_series = pd.isnull(data["Team"])
+# filtering data
+# displaying data only with team = NaN
+data[bool_series]
+
+# importing pandas package
+import pandas as pd
+# making data frame from csv file
+data = pd.read_csv("employees.csv")
+# creating bool series False for NaN values
+bool_series = pd.notnull(data["Gender"])
+# displayed data only with team = NaN
+data[bool_series]
+
+# importing pandas module
+# importing pandas module
+import pandas as pd
+# making data frame from csv file
+data = pd.read_csv("employees.csv")
+# making new data frame with dropped NA values
+new_data = data.dropna(axis = 0, how ='any')
+
+# importing pandas module
+import pandas as pd
+# making data frame from csv file
+nba = pd.read_csv("nba.csv")
+
+# importing pandas module
+import pandas as pd
+# making data frame from csv file
+nba = pd.read_csv("nba.csv")
+# replacing na values in college with No college
+nba["College"].fillna("No College", inplace = True)
+
+ Transform data using apply () and map () method:
+import pandas as pd
+# reading csv
+# defining function to check price
+def fun(num):
+if num<200:
+return "Low"
+elif num>= 200 and num<400:
+return "Normal"
+else:
+return "High"
+# passing function to apply and storing returned series in new
+new = s.apply(fun)
+# printing first 3 element
+print(new.head(3))
+# printing elements somewhere near the middle of series
+print(new[1400], new[1500], new[1600])
+# printing last 3 elements
+print(new.tail(3))
+
+import pandas as pd
+#reading csv files
+pokemon_names = pd.read_csv("pokemon.csv", usecols = ["Pokemon"], squeeze = True)
+#usecol is used to use selected columns
+#index_col is used to make passed column as index
+pokemon_types = pd.read_csv("pokemon.csv", index_col = "Pokemon",squeeze = True)
+#using pandas map function
+new=pokemon_names.map(pokemon_types)
+print (new)
+
+#import dependencies
+import pandas as pd
+import numpy as np
+import plotly.express as px
+#load the data into a dataframe
+df = pd.read_csv('uber.csv')
+#check the first 5 rows
+df.head()
+#drop the unnecessary columns
+df = df.drop(columns=(['pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude']))
+
+
+# importing pandas package
+import pandas as pd
+# making data frame from csv file
+data = pd.read_csv("employees.csv")
+# converting and overwriting values in column
+data["Team"]= data["Team"].str.upper()
+# display
+OUTPUT
+# importing pandas package
+import pandas as pd
+# making data frame from csv file
+data = pd.read_csv("employees.csv")
+# converting and overwriting values in column
+data["First Name"]= data["First Name"].str.lower()
+#display 
+
